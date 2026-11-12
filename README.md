@@ -4,4 +4,4 @@
 
 ### Screenshoot
 
-![Screenshoot](docs/screenshoot.png)
+![Screenshoot](docs/recording.gif)
