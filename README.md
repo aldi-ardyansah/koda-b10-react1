@@ -2,6 +2,6 @@
 
 ## Membuat Form Menggunakan React
 
-### Screenshoot
+### Screen Capture
 
-![Screenshoot](docs/recording.gif)
+![Recording](docs/recording.gif)
