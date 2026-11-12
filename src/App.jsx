@@ -18,13 +18,24 @@ function App() {
     },
   });
 
-  function onSubmit(data) {
-    console.log(data);
-  }
+function onSubmit(data) {
+  const existingData = JSON.parse(localStorage.getItem("data")) || [];
+
+  const formattedData = {
+    name: data.name,
+    age: data.age,
+    gender: data.gender,
+    smoker: data.smoker,
+    cigar: data.cigar || [],
+  };
+
+  existingData.push(formattedData);
+  localStorage.setItem("data", JSON.stringify(existingData));
+}
 
   return (
     <div className="min-h-screen bg-purple-50 p-5">
-      <div className="flex items-center justify-center">
+      <div className="flex flex-col items-center justify-center gap-4">
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 lg:w-1/2 w-full">
           <div className="bg-white p-10 border border-gray-200 rounded-lg border-t-8 border-t-violet-700 flex flex-col">
             <span className="text-2xl pb-4 font-semibold">Form Survey Perokok dan Non-perokok</span>
@@ -97,6 +108,7 @@ function App() {
             <button type="reset" className="ml-auto">Clear form</button>
           </div>
         </form>
+        <button className="bg-violet-700 px-4 py-2 rounded-md text-white items-center justify-center">Lihat Tabel Hasil Survey</button>
       </div>
     </div>
   )
